@@ -5,11 +5,10 @@ import ModelDocument from "./model/model.js";
 class Document extends HTMLElement{
     constructor() {
         super();
-        this.socketUrl = "ws://192.168.100.11:8080";
      
         this.innerView = new DocumentView();
         this.innerModel = new ModelDocument();
-        this.documentController = new DocumentController(this.innerView, this.innerModel, this.socketUrl);
+        this.documentController = new DocumentController(this.innerView, this.innerModel);
     
         this.appendChild(this.innerView);
     }

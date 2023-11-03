@@ -1,9 +1,9 @@
 class DocumentController {
-    constructor(view, model, socketUrl) {
+    constructor(view, model) {
         this.innerWiew = view;
         this.innerModel = model;
 
-        this.socket = new WebSocket(socketUrl);
+        this.socket = new WebSocket(this.socketUrl = "ws://192.168.100.11:8080");
 
         this.socket.addEventListener("open", (event) => {
             console.log("Conexión WebSocket abierta");
